@@ -28,7 +28,7 @@ function Expensecontainer() {
   async function addExpense(title,amount){
      
     try {
-       const newExpense = await fetch("http://localhost:3333/expense/post",{
+       const newExpense = await fetch("https://expensetrackerbackend-0zuw.onrender.com/expense/post",{
              method:"POST",
              headers: { "Content-Type": "application/json" },
              body: JSON.stringify({ title,amount })
@@ -48,7 +48,7 @@ function Expensecontainer() {
   //get backend integration
   async function fetchExpense(title,amount) {
        try {
-      const response = await fetch("http://localhost:3333/expense/get")
+      const response = await fetch("https://expensetrackerbackend-0zuw.onrender.com/expense/get")
       const data = await response.json()
       setExpense(data.expenses)
     } catch (error) {
@@ -67,7 +67,7 @@ function Expensecontainer() {
   
   // delete backend integration
   async function deleteExpense(id) {
-       await fetch(`http://localhost:3333/expense/delete/${id}`,{
+       await fetch(`https://expensetrackerbackend-0zuw.onrender.com/expense/delete/${id}`,{
         method: "DELETE"
        })
        console.log("hg")
